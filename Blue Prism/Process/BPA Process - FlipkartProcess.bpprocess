@@ -1,0 +1,55 @@
+﻿<process name="FlipkartProcess" version="1.0" bpversion="6.9.0.26970" narrative="retrieveing data from flipkart webpage" byrefcollection="true" preferredid="2b7077ac-6f78-41e1-873f-225ce75c94fc" published="true">
+  <view>
+    <camerax>0</camerax>
+    <cameray>21</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="6cc63369-78ba-4848-badd-07a4c185fcca" name="Start" type="Start">
+    <display x="15" y="-105" />
+    <onsuccess>7a7a67ae-1357-4ef2-a6a0-5c17bcd2be51</onsuccess>
+  </stage>
+  <stage stageid="0879c340-62c8-4b30-b116-8f8154e30b61" name="End" type="End">
+    <display x="15" y="210" />
+  </stage>
+  <stage stageid="7adc78ab-9d0e-4fae-a637-aea0f718c743" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="7a7a67ae-1357-4ef2-a6a0-5c17bcd2be51" name="FlipkartDataExtraction::Launch Application" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-60" />
+    <onsuccess>9487b8bf-4a0f-4f1a-a02e-dccdc7e25fd8</onsuccess>
+    <resource object="FlipkartDataExtraction" action="Launch Application" />
+  </stage>
+  <stage stageid="9487b8bf-4a0f-4f1a-a02e-dccdc7e25fd8" name="FlipkartDataExtraction::SearchBoxProduct" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-15" />
+    <onsuccess>0a6b26eb-17e9-4862-bf91-e5b6cdb6a848</onsuccess>
+    <resource object="FlipkartDataExtraction" action="SearchBoxProduct" />
+  </stage>
+  <stage stageid="0a6b26eb-17e9-4862-bf91-e5b6cdb6a848" name="FlipkartDataExtraction::Write data in Excel" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="30" />
+    <onsuccess>e9e1e1d8-fc8b-4afc-8b14-7d66043caf7d</onsuccess>
+    <resource object="FlipkartDataExtraction" action="Write data in Excel" />
+  </stage>
+  <stage stageid="e9e1e1d8-fc8b-4afc-8b14-7d66043caf7d" name="FlipkartDataExtraction::Verification of Changes into Data" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="75" />
+    <onsuccess>1a86811a-e8b0-46a8-8767-907a966a6cf7</onsuccess>
+    <resource object="FlipkartDataExtraction" action="Verification of Changes into Data" />
+  </stage>
+  <stage stageid="1a86811a-e8b0-46a8-8767-907a966a6cf7" name="FlipkartDataExtraction::Insert Data into DB" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="120" />
+    <onsuccess>da2c81a2-ab08-4a09-bf35-80ef961326f4</onsuccess>
+    <resource object="FlipkartDataExtraction" action="Insert Data into DB" />
+  </stage>
+  <stage stageid="da2c81a2-ab08-4a09-bf35-80ef961326f4" name="FlipkartDataExtraction::Get Color" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="165" />
+    <onsuccess>0879c340-62c8-4b30-b116-8f8154e30b61</onsuccess>
+    <resource object="FlipkartDataExtraction" action="Get Color" />
+  </stage>
+</process>

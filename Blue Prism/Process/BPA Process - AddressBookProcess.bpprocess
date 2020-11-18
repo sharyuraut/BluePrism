@@ -1,0 +1,49 @@
+﻿<process name="AddressBookProcess" version="1.0" bpversion="6.9.0.26970" narrative="Address Book process" byrefcollection="true" preferredid="d3b44ea7-3d05-429a-a3d4-c77ce5e47b6c" published="true">
+  <view>
+    <camerax>0</camerax>
+    <cameray>0.199996948</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="8d933fac-4f63-4c70-883a-f3aaa666d1a0" name="Start" type="Start">
+    <display x="15" y="-105" />
+    <onsuccess>12202a4c-52c5-4c3c-b014-d35a713f6929</onsuccess>
+  </stage>
+  <stage stageid="4330cead-255d-4f3a-90d2-28d38984f331" name="End" type="End">
+    <display x="15" y="165" />
+  </stage>
+  <stage stageid="cbee8982-08a5-42b9-b555-7d347f5baa79" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="ad8ca84e-da6c-4b4e-ba7c-df0cc8a3d324" name="AddressBookSystem::Read Table Operation" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-15" />
+    <onsuccess>08136d53-f96c-4943-a440-f1208799f246</onsuccess>
+    <resource object="AddressBookSystem" action="Read Table Operation" />
+  </stage>
+  <stage stageid="08136d53-f96c-4943-a440-f1208799f246" name="AddressBookSystem::Delete Query on table" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="30" />
+    <onsuccess>f02c1644-f4e1-40cd-8ad2-ad87b96f867c</onsuccess>
+    <resource object="AddressBookSystem" action="Delete Query on table" />
+  </stage>
+  <stage stageid="f02c1644-f4e1-40cd-8ad2-ad87b96f867c" name="AddressBookSystem::Ensure No duplicate Entries" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="75" />
+    <onsuccess>9db8bf17-2b2c-4995-81ef-f5e399e00d9c</onsuccess>
+    <resource object="AddressBookSystem" action="Ensure No duplicate Entries" />
+  </stage>
+  <stage stageid="12202a4c-52c5-4c3c-b014-d35a713f6929" name="AddressBookSystem::Update Table Operation" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="-60" />
+    <onsuccess>ad8ca84e-da6c-4b4e-ba7c-df0cc8a3d324</onsuccess>
+    <resource object="AddressBookSystem" action="Update Table Operation" />
+  </stage>
+  <stage stageid="9db8bf17-2b2c-4995-81ef-f5e399e00d9c" name="AddressBookSystem::Get Info about a person Query" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="15" y="120" />
+    <onsuccess>4330cead-255d-4f3a-90d2-28d38984f331</onsuccess>
+    <resource object="AddressBookSystem" action="Get Info about a person Query" />
+  </stage>
+</process>
